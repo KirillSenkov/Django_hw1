@@ -10,7 +10,6 @@ class Command(BaseCommand):
         self.stdout.write("Importing phones...")
         with open('phones.csv', 'r', newline='') as csvfile:
             phones_reader = csv.reader(csvfile, delimiter=';', quotechar=chr(10))
-            #cntr = 0
             phone = Phone()
             for cntr, row in enumerate(phones_reader):
                 if cntr > 0:
@@ -23,7 +22,6 @@ class Command(BaseCommand):
                     phone.slug = slugify(row[1])
                     phone.save()
                     print(str(phone))
-                #cntr += 1
         self.stdout.write("Import completed successfully.")
 cmd = Command()
 cmd = cmd.handle()
