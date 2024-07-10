@@ -23,7 +23,7 @@ class Command(BaseCommand):
                     phone.slug = slugify(row[1])
                     phone.save()
                     print(str(phone))
-                cntr += 1
+                #cntr += 1
         self.stdout.write("Import completed successfully.")
 cmd = Command()
 cmd = cmd.handle()
